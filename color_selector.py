@@ -5,9 +5,9 @@ import math
 import time
 
 #cap = cv2.VideoCapture(0)
-cap = cv2.VideoCapture(
-    "/Users/pc/Desktop/Code/OpenCV/robosub/gateSample_01.mov")
+#cap = cv2.VideoCapture("/Users/pc/Desktop/Code/OpenCV/gateSample_01.mov")
 
+cap = cv2.VideoCapture(r"C:\Users\Eesh\Documents\Robotics\OpenCV\gateSample_01.mov")
 
 def drawBox(maskFrame, frameOG):
     font = cv2.FONT_HERSHEY_SIMPLEX
