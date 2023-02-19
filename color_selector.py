@@ -85,7 +85,7 @@ def get_color(frame):
     mask = cv2.inRange(hsv, colorLower, colorUpper)
     #mask2 = cv2.inRange(hsv, colorLower2, colorUpper2)
     mask_final = mask  # + mask2
-    #cv2.imshow("mask", mask_final)
+    cv2.imshow("mask", mask_final)
     kernel = np.ones((3, 3), np.uint8)
     eroded = cv2.erode(mask_final, kernel, iterations=0)
     #dilated = cv2.dilate(mask_final, kernel, iterations=3)
@@ -109,13 +109,6 @@ cv2.createTrackbar("ValLower", "HSV Picker", 0, 255, on_trackbarVl)
 cv2.createTrackbar("HueUpper", "HSV Picker", 0, 360, on_trackbarHu)
 cv2.createTrackbar("SatUpper", "HSV Picker", 0, 255, on_trackbarSu)
 cv2.createTrackbar("ValUpper", "HSV Picker", 0, 255, on_trackbarVu)
-
-on_trackbarHl(0)
-on_trackbarSl(64)
-on_trackbarVl(0)
-on_trackbarHu(17)
-on_trackbarSu(226)
-on_trackbarVu(222)
 
 
 while (True):
