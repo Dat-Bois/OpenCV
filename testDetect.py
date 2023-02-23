@@ -5,14 +5,17 @@ import math
 import time
 
 #cap = cv2.VideoCapture(0)
+
 #cap = cv2.VideoCapture("/Users/pc/Desktop/Code/OpenCV/gateSample_01.mov")
 
-cap = cv2.VideoCapture(r"C:\Users\Eesh\Documents\Robotics\OpenCV\gateSample_01.mov")
+cap = cv2.VideoCapture("/home/inspiration/OpenCV/gateSample_01.mov")
+
+#cap = cv2.VideoCapture(r"C:\Users\Eesh\Documents\Robotics\OpenCV\gateSample_01.mov")
 
 global upperH, upperS, upperV, lowerH, lowerS, lowerV
 
 global watchDog
-global start 
+global start
 start = time.time()
 watchDog = [0,0,0,0]
 
@@ -29,7 +32,7 @@ def findCenter(x1, y1, x2, y2):
     x1F = min(x1,x2)
     y2F = max(y1,y2)
     y1F = min(y1,y2)
-    
+
     centerX = ((x2F-x1F)//2) + x1F
     centerY = ((y2F-y1F)//2) + y1F
 
@@ -72,7 +75,7 @@ def drawBox(maskFrame, frameOG):
     val1, val2 = findCenter(values[0][0]+values[0][2], values[0][1]+values[0][3], values[1][0], values[1][1])
     val3, val4 = findCenter(values[2][0]+values[2][2], values[2][1]+values[2][3], values[1][0]+values[1][2], values[1][1])
     temp = [val1, val2, val3, val4]
-    
+
     if(not compareVals(temp)):
         return
 
